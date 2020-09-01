@@ -11,45 +11,135 @@ let nonce;
 const abi = [
 	[
 	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "verifierAddress",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "n_iters",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "constructor"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "blockNumber",
+				"type": "uint256"
+			},
+			{
+				"indexed": false,
+				"internalType": "bytes32",
+				"name": "randomness",
+				"type": "bytes32"
+			}
+		],
+		"name": "LogNewRandomness",
+		"type": "event"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "getLatestRandomness",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			},
+			{
+				"internalType": "bytes32",
+				"name": "",
+				"type": "bytes32"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "blockNumber",
+				"type": "uint256"
+			}
+		],
+		"name": "getRandomness",
+		"outputs": [
+			{
+				"internalType": "bytes32",
+				"name": "",
+				"type": "bytes32"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "n_iterations",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "owner",
+		"outputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
 		"constant": false,
 		"inputs": [
 			{
-				"name": "_number",
+				"internalType": "uint256",
+				"name": "blockNumber",
 				"type": "uint256"
+			},
+			{
+				"internalType": "bytes32",
+				"name": "blockHash",
+				"type": "bytes32"
+			},
+			{
+				"internalType": "uint256[5]",
+				"name": "proofPublicInput",
+				"type": "uint256[5]"
 			}
 		],
-		"name": "setTimeSeriesAverage",
+		"name": "registerNewRandomness",
 		"outputs": [],
 		"payable": false,
 		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"constant": true,
-		"inputs": [],
-		"name": "getTimeSeriesAverage",
-		"outputs": [
-			{
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"constant": true,
-		"inputs": [],
-		"name": "time_series_average_number",
-		"outputs": [
-			{
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
 		"type": "function"
 	}
 ]
