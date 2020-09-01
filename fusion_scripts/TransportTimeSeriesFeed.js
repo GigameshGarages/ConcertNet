@@ -57,19 +57,19 @@ const contractAddress = //"address of deployed contract";
 const sampleContract = new web3.eth.Contract(abi, contractAddress);
 
 
-//Example Oracle sets number from the api below - gas price on mainnet.
+//Example Oracle sets number from the api below - Time Series of Transport Data from US Government
 async function main() {
 
-  let gasReq = await fetch('https://ethgasstation.info/json/ethgasAPI.json');
-  let gasInfo = await gasReq.json();
-  let gasAvg = await (gasInfo.average);
+  let timeSeriesFeed = await fetch('https://data.transportation.gov/api/views/5ti2-5uiv/rows.json?accessType=DOWNLOAD');
+  let timeSeriesInfo = await timeSeriesFeed.json();
+  let timeSeriesAvg = await (timeSeriesInfo.average);
 
   //sets input for setNumber function as gasAvg.
 	//Makes this into an object of the sendTx function (below) and triggers that function.
-  await sendTx(sampleContract.methods.setNumber(gasAvg));
+  await sendTx(sampleContract.methods.setNumber(timeSeriesAvg));
 
 	//print average gas price in console
-	console.log("Avg gas price",gasAvg);
+	console.log("Avg gas price",timeSeriesAvg);
 }
 
 //function sending the transaction from our configured wallet (the private key we provided)
