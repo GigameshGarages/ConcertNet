@@ -10,7 +10,6 @@ This is an implementation of an Ethereum oracle using web3. An oracle is simply 
 * NPM
 * Web3
 * node-fetch
-* Code Logic
 
 ## Fusion Scrpts
 
