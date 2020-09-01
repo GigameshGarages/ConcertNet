@@ -9,6 +9,7 @@ let nonce;
 
 //contract abi - the below is for the sample contract.
 const abi = [
+	[
 	{
 		"constant": false,
 		"inputs": [
@@ -17,7 +18,7 @@ const abi = [
 				"type": "uint256"
 			}
 		],
-		"name": "setNumber",
+		"name": "setTimeSeriesAverage",
 		"outputs": [],
 		"payable": false,
 		"stateMutability": "nonpayable",
@@ -26,7 +27,7 @@ const abi = [
 	{
 		"constant": true,
 		"inputs": [],
-		"name": "getNumber",
+		"name": "getTimeSeriesAverage",
 		"outputs": [
 			{
 				"name": "",
@@ -40,7 +41,7 @@ const abi = [
 	{
 		"constant": true,
 		"inputs": [],
-		"name": "number",
+		"name": "time_series_average_number",
 		"outputs": [
 			{
 				"name": "",
@@ -51,10 +52,11 @@ const abi = [
 		"stateMutability": "view",
 		"type": "function"
 	}
+]
 ];
 
 const contractAddress = //"address of deployed contract";
-const sampleContract = new web3.eth.Contract(abi, contractAddress);
+const sampleContract = new web3.eth.Contract(abi, 0xc45ce7cb4dd85490207d2d7f5aa643de471921d325bad049094cdb21e903cf60);
 
 
 //Example Oracle sets number from the api below - Time Series of Transport Data from US Government
@@ -74,7 +76,7 @@ async function main() {
 
 //function sending the transaction from our configured wallet (the private key we provided)
 async function sendTx(txObject) {
-  const txTo = contractAddress;
+  const txTo = 0xc45ce7cb4dd85490207d2d7f5aa643de471921d325bad049094cdb21e903cf60;
   const txData = txObject.encodeABI(); //txObject was set in main funtion
   const txFrom = account.address;
   const txKey = account.privateKey;
