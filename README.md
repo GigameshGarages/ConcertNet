@@ -6,11 +6,11 @@ Submission for ETH India 2020 DApp Jedi Hackathon
 This is an implementation of an Ethereum oracle using web3. An oracle is simply a messenger which relays data from one source to another, in this case a number is fetched from an API and this is relayed to a smart contract on the ethereum blockchain via the "setNumber" function in the sample smart contract.
 
 ## Dependencies
-Node.js
-NPM
-Web3
-node-fetch
-Code Logic
+* Node.js
+* NPM
+* Web3
+* node-fetch
+* Code Logic
 
 ## Fusion Scrpts
 
