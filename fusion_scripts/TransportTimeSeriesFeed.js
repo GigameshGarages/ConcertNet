@@ -1,4 +1,14 @@
 const Web3 = require("web3");
+
+const maticTestnetProvider = new WalletConnectProvider({
+  host: "https://testnet2.matic.network",
+  onConnect: () => {
+    // connected
+  },
+  onDisconnect: () => {}
+})
+
+
 const rpcUrl = // "https://ropsten.infura.io/InsertYourAPIKey"; //The url which links you to the ethereum network - Ropsten in this case.
 const web3 = new Web3(new Web3.providers.HttpProvider(rpcUrl));
 const privateKey = //"0xYourPrivateKey"; //Private Key to sign transactions with.
