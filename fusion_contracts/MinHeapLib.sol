@@ -1,4 +1,4 @@
-pragma solidity ^0.4.19;
+pragma solidity ^0.5.0;
 
 library MinHeapLib {
     struct Heap {
@@ -10,7 +10,6 @@ library MinHeapLib {
         _heap.data.length += 1;
         _heap.data[index] = value;
 
-        // Fix the min heap if it is violated.
         while (index != 0 && _heap.data[index] < _heap.data[(index - 1) / 2]) {
             uint256 temp = _heap.data[index];
             _heap.data[index] = _heap.data[(index - 1) / 2];
