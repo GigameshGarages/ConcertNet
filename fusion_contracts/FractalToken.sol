@@ -1,4 +1,4 @@
-pragma solidity ^0.5.20;
+pragma solidity ^0.4.20;
 
 // ----------------------------------------------------------------------------------------------
 // Fusion Ledger  fixed supply token contract
