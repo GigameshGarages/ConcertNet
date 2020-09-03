@@ -1,4 +1,4 @@
-pragma solidity ^0.5.20;
+pragma solidity ^0.6.0;
 
 // ----------------------------------------------------------------------------------------------
 // Fusion Ledger  fixed supply token contract
@@ -9,26 +9,26 @@ pragma solidity ^0.5.20;
 // ERC Token Standard #20 Interface
 // https://github.com/ethereum/EIPs/issues/20
 
-contract ERC20Interface {
+abstract contract ERC20Interface {
     // Get the total token supply
-    function totalSupply() view public returns (uint256);
+    function totalSupply() view  virtual public returns (uint256);
 
     // Get the account balance of another account with address _owner
-    function balanceOf(address _owner) view public returns (uint256);
+    function balanceOf(address _owner) view virtual public returns (uint256);
 
     // Send _value amount of tokens to address _to
-    function transfer(address _to, uint256 _value) public returns (bool success);
+    function transfer(address _to, uint256 _value) virtual public returns (bool success);
 
     // Send _value amount of tokens from address _from to address _to
-    function transferFrom(address _from, address _to, uint256 _value) public returns (bool success);
+    function transferFrom(address _from, address _to, uint256 _value) virtual public returns (bool success);
 
     // Allow _spender to withdraw from your account, multiple times, up to the _value amount.
     // If this function is called again it overwrites the current allowance with _value.
     // this function is required for some DEX functionality
-    function approve(address _spender, uint256 _value) public returns (bool success);
+    function approve(address _spender, uint256 _value) virtual public returns (bool success);
 
     // Returns the amount which _spender is still allowed to withdraw from _owner
-    function allowance(address _owner, address _spender) view public returns (uint256 remaining);
+    function allowance(address _owner, address _spender) virtual view public returns (uint256 remaining);
 
     // Triggered when tokens are transferred.
     event Transfer(address indexed _from, address indexed _to, uint256 _value);
@@ -60,22 +60,22 @@ contract FusionToken is ERC20Interface {
     }
 
     // Constructor
-    function FusionToken() public {
+    function fusionToken() public {
         owner = msg.sender;
         balances[owner] = _totalSupply;
     }
 
-    function totalSupply() view public returns (uint256) {
+    function totalSupply() view public override returns (uint256) {
         return _totalSupply;
     }
 
     // What is the balance of a particular account?
-    function balanceOf(address _owner) view public returns (uint256) {
+    function balanceOf(address _owner) view public override returns (uint256) {
         return balances[_owner];
     }
 
     // Transfer the balance from owner's account to another account
-    function transfer(address _to, uint256 _amount) public returns (bool success) {
+    function transfer(address _to, uint256 _amount) public override returns (bool success) {
         if (balances[msg.sender] >= _amount
         && _amount > 0
         && balances[_to] + _amount > balances[_to]) {
@@ -99,7 +99,7 @@ contract FusionToken is ERC20Interface {
     address _from,
     address _to,
     uint256 _amount
-    ) public returns (bool) {
+    ) public override returns (bool) {
         if (balances[_from] >= _amount
         && allowed[_from][msg.sender] >= _amount
         && _amount > 0
@@ -118,13 +118,13 @@ contract FusionToken is ERC20Interface {
 
     // Allow _spender to withdraw from your account, multiple times, up to the _value amount.
     // If this function is called again it overwrites the current allowance with _value.
-    function approve(address _spender, uint256 _amount) public returns (bool success) {
+    function approve(address _spender, uint256 _amount) public override returns (bool success) {
         allowed[msg.sender][_spender] = _amount;
         emit Approval(msg.sender, _spender, _amount);
         return true;
     }
 
-    function allowance(address _owner, address _spender) view public returns (uint256 remaining) {
+    function allowance(address _owner, address _spender) view public override returns (uint256 remaining) {
         return allowed[_owner][_spender];
     }
 
