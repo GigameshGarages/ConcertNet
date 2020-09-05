@@ -60,7 +60,7 @@ contract FusionToken is ERC20Interface {
     }
 
     // Constructor
-    function fusionToken() public {
+    constructor () public {
         owner = msg.sender;
         balances[owner] = _totalSupply;
     }
