@@ -1,12 +1,14 @@
-pragma solidity ^0.6.1;
+pragma solidity ^0.6.2;
 
-import "https://github.com/OpenZeppelin/openzeppelin-contracts/tree/master/contracts//token/ERC20/ERC20.sol";
-import "https://github.com/OpenZeppelin/openzeppelin-contracts/tree/master/contracts/access/Ownable.sol";
-import "https://github.com/iden3/rollup/tree/master/contracts/RollupHelpers.sol";
-import "https://github.com/iden3/rollup/tree/master/contracts./RollupInterface.sol";
-import "https://github.com/iden3/rollup/tree/master/contractsVerifierInterface.sol";
 
-contract TokenRollup is Ownable, RollupHelpers, RollupInterface {
+import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/token/ERC20/ERC20.sol";
+import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/access/Ownable.sol";
+import "https://github.com/iden3/rollup/blob/master/contracts/lib/RollupHelpers.sol";
+import "https://github.com/iden3/rollup/blob/master/contracts/RollupInterface.sol";
+import "https://github.com/iden3/rollup/blob/master/contracts/VerifierInterface.sol";
+
+
+contract TokenRollup is Ownable ,RollupHelpers,RollupInterface{
     // External contracts used
     VerifierInterface verifier;
 
