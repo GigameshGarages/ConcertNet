@@ -1,20 +1,9 @@
-pragma solidity ^0.4.18;
+pragma solidity ^0.6.0;
 
 import "./ERC20.sol";
-import"./FusionToken.sol";
-import "./FractalToken.sol".
+import * as FusionToken from "./FusionToken.sol";
+import * as FractalToken from "./FractalToken.sol";
 
-contract FusionToken {
-
-function totalSupply() view public returns (uint256) { return _totalSupply; }
-
-}
-
-contract FractalToken {
-
-function totalSupply() view public returns (uint256) { return _totalSupply; }
-
-}
 
 contract FiniteSwap {
 
@@ -79,7 +68,7 @@ contract FiniteSwap {
 
     // Transfer the closing funds from the closing trader to the opening trader.
     ERC20 FractalToken = ERC20(swap.closeContractAddress);
-    require(swap.closeValue <= closeERC20Contract.allowance(swap.closeTrader, address(this)));
+    require(swap.closeValue <= FractalToken.allowance(swap.closeTrader, address(this)));
     require(FractalToken.transferFrom(swap.closeTrader, swap.openTrader, swap.closeValue));
 
     // Transfer the opening funds from this contract to the closing trader.
