@@ -3,7 +3,6 @@ pragma solidity ^0.6.2;
 import './TokenRollup.sol';
 import './FusionToken.sol';
 import './FractalToken.sol';
-import './FiniteSwap.sol';
 import './FractalDAO.sol';
 
 
@@ -112,7 +111,7 @@ contract FusionRollup is TokenRollup {
      * contains all data required for the operator to update balance tree
      */
     event OnChainTx(uint batchNumber, bytes32 txData, uint128 loadAmount,
-        address FusionToken, uint256 fromAx, uint256 fromAy,  address FractalToken, uint256 toAx, uint256 toAy);
+        address FusionToken, uint256 fromAx, uint256 fromAy,  address FractalDAO, uint256 toAx, uint256 toAy);
 
     /**
      * @dev Event called when a batch is forged
@@ -124,7 +123,7 @@ contract FusionRollup is TokenRollup {
      * @dev Event called when a token is added to token list
      * Contains token address and its index inside rollup token list
      */
-    event AddToken(address tokenAddress, uint tokenId);
+    event AddToken(address FractalToken, uint tokenId);
 
     /**
      * @dev modifier to check if forge batch mechanism has been initialized
@@ -168,17 +167,17 @@ contract FusionRollup is TokenRollup {
      * Fees to include token are increased as tokens are added into rollup
      * @param tokenAddress smart contract token address
      */
-    function addToken(address tokenAddress) public payable {
+    function addToken(address FractalToken) public payable {
         // Allow MAX_TOKENS different types of tokens
         require(tokens.length <= MAX_TOKENS, 'token list is full');
         require(msg.value >= feeAddToken, 'Amount is not enough to cover token fees');
-        tokens.push(tokenAddress);
+        tokens.push(FractalToken);
         uint tokenId = tokens.length - 1;
-        tokenList[tokenId] = tokenAddress;
+        tokenList[tokenId] = FractalToken;
         feeTokenAddress.transfer(msg.value);
         // increase fees for next token deposit
         feeAddToken = (feeAddToken / 4) + feeAddToken;
-        emit AddToken(tokenAddress, tokenId);
+        emit AddToken(FractalToken, tokenId);
     }
 
     /**
@@ -187,7 +186,7 @@ contract FusionRollup is TokenRollup {
      * @param loadAmount amount to add to balance tree
      * @param FusionToken ethereum Address
      * @param fromBabyPubKey public key babyjubjub represented as point (Ax, Ay)
-     * @param FractalToken ethereum Address
+     * @param FractalDAO ethereum Address
      * @param toBabyPubKey public key babyjubjub represented as point (Ax, Ay)
      */
     function _updateOnChainHash(
@@ -195,7 +194,7 @@ contract FusionRollup is TokenRollup {
         uint128 loadAmount,
         address FusionToken,
         uint256[2] memory fromBabyPubKey,
-        address FractalToken,
+        address FractalDAO,
         uint256[2] memory toBabyPubKey
     ) private {
 
@@ -204,7 +203,7 @@ contract FusionRollup is TokenRollup {
 
         // Calculate onChain Hash
         Entry memory onChainData = buildOnChainData(fromBabyPubKey[0], fromBabyPubKey[1],
-        FractalToken, toBabyPubKey[0], toBabyPubKey[1]);
+        FractalDAO, toBabyPubKey[0], toBabyPubKey[1]);
         uint256 hashOnChainData = hashEntry(onChainData);
         Entry memory onChainHash = buildOnChainHash(currentFilling.fillingOnChainTxsHash, txData, loadAmount,
             hashOnChainData, FusionToken);
@@ -222,7 +221,7 @@ contract FusionRollup is TokenRollup {
         
         // trigger on chain tx event event
         emit OnChainTx(currentFillingBatch, bytes32(txData), loadAmount, FusionToken, fromBabyPubKey[0], fromBabyPubKey[1],
-        FractalToken, toBabyPubKey[0], toBabyPubKey[1]);
+        FractalDAO, toBabyPubKey[0], toBabyPubKey[1]);
 
          // if the currentFilling slot have all the OnChainTx possible, add a new element to the array
         if (currentFilling.currentOnChainTx >= MAX_ONCHAIN_TX) {
