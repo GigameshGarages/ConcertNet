@@ -1,7 +1,7 @@
-pragma solidity ^0.5.0;
+pragma solidity ^0.6.2;
 
-// The first of its kind VDF Powered RANDAO for the Fractal Network deployed on Matic Network TestNet
-// Based on the concept from Justin Drake https://ethresear.ch/t/minimal-vdf-randomness-beacon/3566
+// Experimenting RANDAO + VDF on version 1.0
+// Justin Drake https://ethresear.ch/t/minimal-vdf-randomness-beacon/3566
 
 import "./BeaconContract.sol";
 
