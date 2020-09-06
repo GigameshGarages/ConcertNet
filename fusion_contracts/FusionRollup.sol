@@ -8,9 +8,111 @@ import './FractalDAO.sol';
 
 
 contract FusionRollup is TokenRollup {
+    // External contracts used
+    VerifierInterface verifier;
 
-event OnChainTx(uint batchNumber, bytes32 txData, uint128 loadAmount,
-        address fromEthAddress, uint256 fromAx, uint256 fromAy,  address toEthAddress, uint256 toAx, uint256 toAy);
+    // Forge batch mechanism owner
+    address ownerForgeBatch;
+
+    // Each batch forged will have the root state of the 'balance tree'
+    bytes32[] stateRoots;
+
+    // Each batch forged will have a correlated 'exit tree' represented by the exit root
+    bytes32[] exitRoots;
+    mapping(uint256 => bool) public exitNullifier;
+
+    // Define struct to store data of each leaf
+    // lastLeafIndex + relativeIndex = index of the leaf
+    struct leafInfo{
+        uint64 forgedBatch;
+        uint32 relativeIndex;
+        address ethAddress;
+    }
+
+    // Store accounts information, treeInfo[hash(Ax, Ay, tokenId)] = leafInfo
+    mapping(uint256 => leafInfo) treeInfo;
+
+    // Define struct to store batch information regarding number of deposits and keep track of index accounts
+    struct batchInfo{
+        uint64 lastLeafIndex;
+        uint32 depositOnChainCount;
+    }
+
+    // Batch number to batch information
+    mapping(uint256 => batchInfo) public batchToInfo;
+
+    // Maxim Deposit allowed
+    uint constant MAX_AMOUNT_DEPOSIT = (1 << 128);
+
+    // List of valid ERC20 tokens that can be deposit in 'balance tree'
+    address[] public tokens;
+    mapping(uint => address) public tokenList;
+    uint constant MAX_TOKENS = 0xFFFFFFFF;
+    uint public feeAddToken = 0.01 ether;
+
+    // Address to receive token fees
+    address payable feeTokenAddress;
+
+    // Hash of all on chain transactions ( will be forged in the next batch )
+    // Forces 'operator' to add all on chain transactions
+    uint256 public miningOnChainTxsHash;
+
+    /**
+     * @dev Struct that contains all the information to forge future OnchainTx
+     * @param fillingOnChainTxsHash  hash of all on chain transactions ( will be forged in two batches )
+     * @param totalFillingOnChainFee poseidon hash function address
+     * @param currentOnChainTx fees of all on-chain transactions that will be on minninf the next batch
+     */
+    struct fillingInfo {
+        uint256 fillingOnChainTxsHash;
+        uint256 totalFillingOnChainFee;
+        uint256 currentOnChainTx;
+    }
+
+    // batchNum --> filling information
+    mapping(uint256 => fillingInfo) public fillingMap;
+
+    uint256 public currentFillingBatch;
+
+    // Fees of all on-chain transactions which goes to the operator that will forge the batch
+    uint256 public totalMinningOnChainFee;
+
+    // Fees recollected for every on-chain transaction
+    uint256 public feeOnchainTx = 0.01 ether;
+    uint256 public depositFee = 0.001 ether; 
+
+    // maximum on-chain transactions
+    uint public MAX_ONCHAIN_TX;
+
+    // maximum rollup transactions: either off-chain or on-chain transactions
+    uint public MAX_TX;
+
+    // Flag to determine if the mechanism to forge batch has been initialized
+    bool initialized = false;
+
+    // Bytes of a encoded offchain deposit
+    uint32 constant DEPOSIT_BYTES = 88;
+    // Number of levels in Snark circuit
+    uint256 public NLevels = 24;
+
+    // Input snark definition
+    uint256 constant finalIdxInput = 0;
+    uint256 constant newStateRootInput = 1;
+    uint256 constant newExitRootInput = 2;
+    uint256 constant onChainHashInput = 3;
+    uint256 constant offChainHashInput = 4;
+    uint256 constant initialIdxInput = 5;
+    uint256 constant oldStateRootInput = 6;
+    uint256 constant feePlanCoinsInput = 7;
+    uint256 constant feeTotalsInput = 8;
+    uint256 constant beneficiaryAddressInput = 9;
+
+    /**
+     * @dev Event called when any on-chain transaction has benn done
+     * contains all data required for the operator to update balance tree
+     */
+    event OnChainTx(uint batchNumber, bytes32 txData, uint128 loadAmount,
+        address FusionToken, uint256 fromAx, uint256 fromAy,  address FractalToken, uint256 toAx, uint256 toAy);
 
     /**
      * @dev Event called when a batch is forged
@@ -83,17 +185,17 @@ event OnChainTx(uint batchNumber, bytes32 txData, uint128 loadAmount,
      * @dev update on-chain hash
      * @param txData transaction rollup data
      * @param loadAmount amount to add to balance tree
-     * @param fromEthAddress ethereum Address
+     * @param FusionToken ethereum Address
      * @param fromBabyPubKey public key babyjubjub represented as point (Ax, Ay)
-     * @param toEthAddress ethereum Address
+     * @param FractalToken ethereum Address
      * @param toBabyPubKey public key babyjubjub represented as point (Ax, Ay)
      */
     function _updateOnChainHash(
         uint256 txData,
         uint128 loadAmount,
-        address fromEthAddress,
+        address FusionToken,
         uint256[2] memory fromBabyPubKey,
-        address toEthAddress,
+        address FractalToken,
         uint256[2] memory toBabyPubKey
     ) private {
 
@@ -102,10 +204,10 @@ event OnChainTx(uint batchNumber, bytes32 txData, uint128 loadAmount,
 
         // Calculate onChain Hash
         Entry memory onChainData = buildOnChainData(fromBabyPubKey[0], fromBabyPubKey[1],
-        toEthAddress, toBabyPubKey[0], toBabyPubKey[1]);
+        FractalToken, toBabyPubKey[0], toBabyPubKey[1]);
         uint256 hashOnChainData = hashEntry(onChainData);
         Entry memory onChainHash = buildOnChainHash(currentFilling.fillingOnChainTxsHash, txData, loadAmount,
-            hashOnChainData, fromEthAddress);
+            hashOnChainData, FusionToken);
         currentFilling.fillingOnChainTxsHash = hashEntry(onChainHash);
 
         // Update number of on-chain transactions
@@ -119,8 +221,8 @@ event OnChainTx(uint batchNumber, bytes32 txData, uint128 loadAmount,
         currentFilling.totalFillingOnChainFee += feeOnchainTx - burnedFee;
         
         // trigger on chain tx event event
-        emit OnChainTx(currentFillingBatch, bytes32(txData), loadAmount, fromEthAddress, fromBabyPubKey[0], fromBabyPubKey[1],
-        toEthAddress, toBabyPubKey[0], toBabyPubKey[1]);
+        emit OnChainTx(currentFillingBatch, bytes32(txData), loadAmount, FusionToken, fromBabyPubKey[0], fromBabyPubKey[1],
+        FractalToken, toBabyPubKey[0], toBabyPubKey[1]);
 
          // if the currentFilling slot have all the OnChainTx possible, add a new element to the array
         if (currentFilling.currentOnChainTx >= MAX_ONCHAIN_TX) {
@@ -281,7 +383,7 @@ event OnChainTx(uint batchNumber, bytes32 txData, uint128 loadAmount,
      * then transfer some amount to an account already defined in the balance tree
      * @param loadAmount initial balance on balance tree
      * @param tokenId token identifier
-     * @param fromEthAddress allowed address to control new balance tree leaf
+     * @param FusionToken allowed address to control new balance tree leaf
      * @param fromBabyPubKey public key babyjubjub of the sender represented as point (Ax, Ay)
      * @param toBabyPubKey account receiver
      * @param amountF amount to send encoded as half precision float
@@ -289,7 +391,7 @@ event OnChainTx(uint batchNumber, bytes32 txData, uint128 loadAmount,
     function depositAndTransfer(
         uint128 loadAmount,
         uint32 tokenId,
-        address fromEthAddress,
+        address FusionToken,
         uint256[2] memory fromBabyPubKey,
         uint256[2] memory toBabyPubKey,
         uint16 amountF
@@ -299,7 +401,7 @@ event OnChainTx(uint batchNumber, bytes32 txData, uint128 loadAmount,
         require(msg.value >= totalFee, 'Amount deposited less than fee required');
         require(loadAmount > 0, 'Deposit amount must be greater than 0');
         require(loadAmount < MAX_AMOUNT_DEPOSIT, 'deposit amount larger than the maximum allowed');
-        require(fromEthAddress != address(0), 'Must specify withdraw address');
+        require(FusionToken != address(0), 'Must specify withdraw address');
         require(tokenList[tokenId] != address(0), 'token has not been registered');
 
         leafInfo storage fromLeaf = treeInfo[uint256(keccak256(abi.encodePacked(fromBabyPubKey,tokenId)))];
@@ -323,12 +425,12 @@ event OnChainTx(uint batchNumber, bytes32 txData, uint128 loadAmount,
         // Insert tree informations
         fromLeaf.forgedBatch = uint64(currentFillingBatch + 2); // batch wich will be forged
         fromLeaf.relativeIndex = batchToInfo[currentFillingBatch + 2].depositOnChainCount;
-        fromLeaf.ethAddress = fromEthAddress;
+        fromLeaf.ethAddress = FusionToken;
         
         // Burn deposit fee
         address(0).transfer(depositFee);
 
-        _updateOnChainHash(uint256(txDataDepositAndTransfer), loadAmount, fromEthAddress, fromBabyPubKey,
+        _updateOnChainHash(uint256(txDataDepositAndTransfer), loadAmount, FusionToken, fromBabyPubKey,
         toLeaf.ethAddress, toBabyPubKey);
 
         // Return remaining ether to the msg.sender    
@@ -625,6 +727,4 @@ event OnChainTx(uint batchNumber, bytes32 txData, uint128 loadAmount,
     function withdrawToken(uint32 tokenId, address receiver, uint256 amount) private returns(bool){
         return IERC20(tokenList[tokenId]).transfer(receiver, amount);
     }
-}
-
 }
