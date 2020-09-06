@@ -1,7 +1,7 @@
 ETHIndia2020DAppJedi ( Submission for ETH India 2020 DApp Jedi Hackathon )
 
 # Progress
-We have demonstrated an onchain ZK Rollup together with Onchain Randomness of VDF for Random Oracles Proof of Concept and Random DAOs. This is the first implementation of RANDAO +  VDF as per Justin Drake model. Now we would like to demonstrate how an Auction App powered by Portis SDK can benefit. We also would like to convert the Fusion Rollup Contract to a Matic Child Chain. 
+We have demonstrated an onchain ZK Rollup together with Onchain Randomness of VDF for Random Oracles Proof of Concept and Random DAOs. This is the first implementation of RANDAO +  VDF as per Justin Drake model. We have also implemented an Atomic Token Swap between two Tokens - Fusion Token and Fractal Token. Fusion Ledger is thus a combination of Fusion Oracles and Fractal DAOs. Now we would like to demonstrate how an Auction App powered by Portis SDK can benefit from this Fractal DAO and Fusion Oracles. We also would like to convert the Fusion Rollup Contract to a Matic Child Chain demonstrating the combined scalablity architecture of ZK RollUps and Matic Network.  
 
 # Overview
 This is a reference implementation of the FusionLedger framework for On-chain and Off-chain interaction between real work data and digital world institutions. FusionOracles will represent the real world data and FractalDAOs represent the digital world institutions like Banks, Treasuries, Markets, etc. 
