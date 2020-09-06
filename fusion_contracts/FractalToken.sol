@@ -1,7 +1,7 @@
-pragma solidity ^0.6.0;
+pragma solidity ^0.6.2;
 
 // ----------------------------------------------------------------------------------------------
-// Fractal Organisation  fixed supply token contract
+// Fusion Ledger  fixed supply token contract
 // (c) Gokul Alex 2020. The Apache 2.0 License
 // ----------------------------------------------------------------------------------------------
 
@@ -9,7 +9,7 @@ pragma solidity ^0.6.0;
 // ERC Token Standard #20 Interface
 // https://github.com/ethereum/EIPs/issues/20
 
-abstract contract ERC20Interface {
+abstract contract ERC20InterfaceTemplate {
     // Get the total token supply
     function totalSupply() view  virtual public returns (uint256);
 
@@ -38,7 +38,7 @@ abstract contract ERC20Interface {
 }
 
 
-contract FractalToken is ERC20Interface {
+contract FractalToken is ERC20InterfaceTemplate {
     string public constant symbol = "FRACTAL";
     string public constant name = "Fractal Fixed Supply Token";
     uint8 public constant decimals = 0;
