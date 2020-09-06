@@ -1,10 +1,10 @@
 pragma solidity ^0.6.2;
 
-import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/token/ERC20/ERC20.sol";
-import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/access/Ownable.sol";
-import "https://github.com/iden3/rollup/blob/master/contracts/lib/RollupHelpers.sol";
-import "https://github.com/iden3/rollup/blob/master/contracts/RollupInterface.sol";
-import "https://github.com/iden3/rollup/blob/master/contracts/VerifierInterface.sol";
+import "./ERC20.sol";
+import "./Ownable.sol";
+import "./RollupHelpers.sol";
+import "./RollupInterface.sol";
+import "./VerifierInterface.sol";
 
 
 contract TokenRollup is Ownable ,RollupHelpers,RollupInterface{
