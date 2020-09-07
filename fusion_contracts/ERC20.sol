@@ -1,9 +1,9 @@
-pragma solidity ^0.6.0;
+pragma solidity ^0.6.2;
 
-import "http://github.com/OpenZeppelin/openzeppelin-contracts/contracts/GSN/Context.sol";
-import "http://github.com/OpenZeppelin/openzeppelin-contracts/contracts/token/ERC20/IERC20.sol";
-import "http://github.com/OpenZeppelin/openzeppelin-contracts/contracts/math/SafeMath.sol";
-import "http://github.com/OpenZeppelin/openzeppelin-contracts/contracts/utils/Address.sol";
+import "./Context.sol";
+import "./IERC20.sol";
+import "./SafeMath.sol";
+import "./Address.sol";
 
 /**
  * @dev Implementation of the {IERC20} interface.
