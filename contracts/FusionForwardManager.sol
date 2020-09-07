@@ -4,7 +4,7 @@
 // Author : Gokul Alex. The Apache 2.0 License
 // ----------------------------------------------------------------------------------------------
 
-pragma solidity ^0.4.19;
+pragma solidity ^0.6.2;
 import './RLP.sol';
 import './MinHeapLib.sol';
 import './ArrayLib.sol';
