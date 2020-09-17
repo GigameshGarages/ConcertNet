@@ -92,8 +92,7 @@ contract FusionForwardManager {
         require(uint8(blockNumber) == lastBlockNumber + 1);
 
         // Check the signature.
-        bytes32 blockHash = keccak256(PersonalMessagePrefixBytes, blockNumber,
-            previousHash, merkleRoot);
+        bytes32 blockHash = keccak256( blockNumber, previousHash, merkleRoot);
         address signer = ecrecover(blockHash, uint8(sigV), sigR, sigS);
         require(msg.sender == signer);
 
