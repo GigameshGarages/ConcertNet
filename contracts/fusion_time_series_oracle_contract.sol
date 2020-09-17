@@ -1,4 +1,4 @@
-pragma solidity ^0.6.5;
+pragma solidity ^0.6.0;
 
 import "github.com/starkware-libs/veedo/blob/master/contracts/BeaconContract.sol";
 
