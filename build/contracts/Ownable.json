@@ -54,16 +54,16 @@
       "type": "function"
     }
   ],
-  "metadata": "{\"compiler\":{\"version\":\"0.6.12+commit.27d51765\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"previousOwner\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"OwnershipTransferred\",\"type\":\"event\"},{\"inputs\":[],\"name\":\"owner\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"renounceOwnership\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"transferOwnership\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"details\":\"Contract module which provides a basic access control mechanism, where there is an account (an owner) that can be granted exclusive access to specific functions. By default, the owner account will be the one that deploys the contract. This can later be changed with {transferOwnership}. This module is used through inheritance. It will make available the modifier `onlyOwner`, which can be applied to your functions to restrict their use to the owner.\",\"kind\":\"dev\",\"methods\":{\"constructor\":{\"details\":\"Initializes the contract setting the deployer as the initial owner.\"},\"owner()\":{\"details\":\"Returns the address of the current owner.\"},\"renounceOwnership()\":{\"details\":\"Leaves the contract without owner. It will not be possible to call `onlyOwner` functions anymore. Can only be called by the current owner. NOTE: Renouncing ownership will leave the contract without an owner, thereby removing any functionality that is only available to the owner.\"},\"transferOwnership(address)\":{\"details\":\"Transfers ownership of the contract to a new account (`newOwner`). Can only be called by the current owner.\"}},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"/Users/gokulalex/Apps/eth_apps/ConcertNet/contracts/Ownable.sol\":\"Ownable\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/Users/gokulalex/Apps/eth_apps/ConcertNet/contracts/Context.sol\":{\"keccak256\":\"0x7f8f9ab428aaf7b769fbc3193cc63d03cc4feac3b838dba328a490542474c35a\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://febdb4f22851eedd8d15c2b53e09ae69357d6fbab297877b7fdeb9574271541d\",\"dweb:/ipfs/QmaEGKrHDZt1U5UFgpkZ9jJvz19CiGDS4TT8kDou4F3yHy\"]},\"/Users/gokulalex/Apps/eth_apps/ConcertNet/contracts/Ownable.sol\":{\"keccak256\":\"0x6bbe8cf8603223f190c25c0a80d1b0aec0f1f9dd1e836c899854eac923a33df9\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://a5d85aaf6f244f98664647a8c7776bf65fb19c712491d78a874cc83dd50c2090\",\"dweb:/ipfs/QmVDPZ8jiozyYAKwMRscsaQcoUFfxnFfgdDMhA34JyiayA\"]}},\"version\":1}",
+  "metadata": "{\"compiler\":{\"version\":\"0.6.12+commit.27d51765\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"previousOwner\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"OwnershipTransferred\",\"type\":\"event\"},{\"inputs\":[],\"name\":\"owner\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"renounceOwnership\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"transferOwnership\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"details\":\"Contract module which provides a basic access control mechanism, where there is an account (an owner) that can be granted exclusive access to specific functions. By default, the owner account will be the one that deploys the contract. This can later be changed with {transferOwnership}. This module is used through inheritance. It will make available the modifier `onlyOwner`, which can be applied to your functions to restrict their use to the owner.\",\"kind\":\"dev\",\"methods\":{\"constructor\":{\"details\":\"Initializes the contract setting the deployer as the initial owner.\"},\"owner()\":{\"details\":\"Returns the address of the current owner.\"},\"renounceOwnership()\":{\"details\":\"Leaves the contract without owner. It will not be possible to call `onlyOwner` functions anymore. Can only be called by the current owner. NOTE: Renouncing ownership will leave the contract without an owner, thereby removing any functionality that is only available to the owner.\"},\"transferOwnership(address)\":{\"details\":\"Transfers ownership of the contract to a new account (`newOwner`). Can only be called by the current owner.\"}},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"/Users/dhanendra/Gokul/concertnet/ConcertNet/contracts/Ownable.sol\":\"Ownable\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/Users/dhanendra/Gokul/concertnet/ConcertNet/contracts/Context.sol\":{\"keccak256\":\"0x7f8f9ab428aaf7b769fbc3193cc63d03cc4feac3b838dba328a490542474c35a\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://febdb4f22851eedd8d15c2b53e09ae69357d6fbab297877b7fdeb9574271541d\",\"dweb:/ipfs/QmaEGKrHDZt1U5UFgpkZ9jJvz19CiGDS4TT8kDou4F3yHy\"]},\"/Users/dhanendra/Gokul/concertnet/ConcertNet/contracts/Ownable.sol\":{\"keccak256\":\"0x6bbe8cf8603223f190c25c0a80d1b0aec0f1f9dd1e836c899854eac923a33df9\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://a5d85aaf6f244f98664647a8c7776bf65fb19c712491d78a874cc83dd50c2090\",\"dweb:/ipfs/QmVDPZ8jiozyYAKwMRscsaQcoUFfxnFfgdDMhA34JyiayA\"]}},\"version\":1}",
   "bytecode": "0x",
   "deployedBytecode": "0x",
   "immutableReferences": {},
   "sourceMap": "",
   "deployedSourceMap": "",
   "source": "// SPDX-License-Identifier: MIT\n\npragma solidity ^0.6.2;\n\nimport \"./Context.sol\";\n/**\n * @dev Contract module which provides a basic access control mechanism, where\n * there is an account (an owner) that can be granted exclusive access to\n * specific functions.\n *\n * By default, the owner account will be the one that deploys the contract. This\n * can later be changed with {transferOwnership}.\n *\n * This module is used through inheritance. It will make available the modifier\n * `onlyOwner`, which can be applied to your functions to restrict their use to\n * the owner.\n */\ncontract Ownable is Context {\n    address private _owner;\n\n    event OwnershipTransferred(address indexed previousOwner, address indexed newOwner);\n\n    /**\n     * @dev Initializes the contract setting the deployer as the initial owner.\n     */\n    constructor () internal {\n        address msgSender = _msgSender();\n        _owner = msgSender;\n        emit OwnershipTransferred(address(0), msgSender);\n    }\n\n    /**\n     * @dev Returns the address of the current owner.\n     */\n    function owner() public view returns (address) {\n        return _owner;\n    }\n\n    /**\n     * @dev Throws if called by any account other than the owner.\n     */\n    modifier onlyOwner() {\n        require(_owner == _msgSender(), \"Ownable: caller is not the owner\");\n        _;\n    }\n\n    /**\n     * @dev Leaves the contract without owner. It will not be possible to call\n     * `onlyOwner` functions anymore. Can only be called by the current owner.\n     *\n     * NOTE: Renouncing ownership will leave the contract without an owner,\n     * thereby removing any functionality that is only available to the owner.\n     */\n    function renounceOwnership() public onlyOwner {\n        emit OwnershipTransferred(_owner, address(0));\n        _owner = address(0);\n    }\n\n    /**\n     * @dev Transfers ownership of the contract to a new account (`newOwner`).\n     * Can only be called by the current owner.\n     */\n    function transferOwnership(address newOwner) public onlyOwner {\n        require(newOwner != address(0), \"Ownable: new owner is the zero address\");\n        emit OwnershipTransferred(_owner, newOwner);\n        _owner = newOwner;\n    }\n}\n",
-  "sourcePath": "/Users/gokulalex/Apps/eth_apps/ConcertNet/contracts/Ownable.sol",
+  "sourcePath": "/Users/dhanendra/Gokul/concertnet/ConcertNet/contracts/Ownable.sol",
   "ast": {
-    "absolutePath": "/Users/gokulalex/Apps/eth_apps/ConcertNet/contracts/Ownable.sol",
+    "absolutePath": "/Users/dhanendra/Gokul/concertnet/ConcertNet/contracts/Ownable.sol",
     "exportedSymbols": {
       "Ownable": [
         3807
@@ -85,7 +85,7 @@
         "src": "33:23:11"
       },
       {
-        "absolutePath": "/Users/gokulalex/Apps/eth_apps/ConcertNet/contracts/Context.sol",
+        "absolutePath": "/Users/dhanendra/Gokul/concertnet/ConcertNet/contracts/Context.sol",
         "file": "./Context.sol",
         "id": 3701,
         "nodeType": "ImportDirective",
@@ -1437,7 +1437,7 @@
     "src": "33:2172:11"
   },
   "legacyAST": {
-    "absolutePath": "/Users/gokulalex/Apps/eth_apps/ConcertNet/contracts/Ownable.sol",
+    "absolutePath": "/Users/dhanendra/Gokul/concertnet/ConcertNet/contracts/Ownable.sol",
     "exportedSymbols": {
       "Ownable": [
         3807
@@ -1459,7 +1459,7 @@
         "src": "33:23:11"
       },
       {
-        "absolutePath": "/Users/gokulalex/Apps/eth_apps/ConcertNet/contracts/Context.sol",
+        "absolutePath": "/Users/dhanendra/Gokul/concertnet/ConcertNet/contracts/Context.sol",
         "file": "./Context.sol",
         "id": 3701,
         "nodeType": "ImportDirective",
@@ -2815,8 +2815,8 @@
     "version": "0.6.12+commit.27d51765.Emscripten.clang"
   },
   "networks": {},
-  "schemaVersion": "3.2.3",
-  "updatedAt": "2020-09-17T19:37:00.708Z",
+  "schemaVersion": "3.2.4",
+  "updatedAt": "2020-09-17T20:21:07.542Z",
   "devdoc": {
     "details": "Contract module which provides a basic access control mechanism, where there is an account (an owner) that can be granted exclusive access to specific functions. By default, the owner account will be the one that deploys the contract. This can later be changed with {transferOwnership}. This module is used through inheritance. It will make available the modifier `onlyOwner`, which can be applied to your functions to restrict their use to the owner.",
     "kind": "dev",

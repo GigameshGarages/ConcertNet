@@ -20,16 +20,16 @@
       "type": "function"
     }
   ],
-  "metadata": "{\"compiler\":{\"version\":\"0.6.12+commit.27d51765\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"name\":\"getLatestRandomness\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"},{\"internalType\":\"bytes32\",\"name\":\"\",\"type\":\"bytes32\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"/Users/gokulalex/Apps/eth_apps/ConcertNet/contracts/fusion_time_series_oracle_contract.sol\":\"Beacon\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/Users/gokulalex/Apps/eth_apps/ConcertNet/contracts/BeaconContract.sol\":{\"keccak256\":\"0x9cbfb80d7f0e470fd5f533647ddd5cb32eb4c1a345e8aab13e15b4e7a3fb3638\",\"urls\":[\"bzz-raw://8c6c0883dc2879725e13ec9859b8c0ab871d952d67bfb024f6272dfe222f6262\",\"dweb:/ipfs/QmUfEzp6oizqkvy4CuAf4WmFGmzQVVKykCiYE3kLRPhQDb\"]},\"/Users/gokulalex/Apps/eth_apps/ConcertNet/contracts/IFactRegistry.sol\":{\"keccak256\":\"0x48326ab1c8f3c9e2414dd372305903f02d993bf5ee96ec46dec7167e6e9c325e\",\"urls\":[\"bzz-raw://251110b4ba9bb53d583c0fcb78c65c44dc7a4eb9f0a914a2b394d69a9fe17e4b\",\"dweb:/ipfs/QmbZZjwbhsQS2e4Fk91tNXpu2JxasZiNXyKJtSU9yGZeVG\"]},\"/Users/gokulalex/Apps/eth_apps/ConcertNet/contracts/PublicInputOffsets.sol\":{\"keccak256\":\"0xb93afec6f46bcbd89287f7032cdb1f2d1d13a50624abe94dea99e0a9444b214b\",\"urls\":[\"bzz-raw://de59913e48a5ca8b83f7e55589117062a5a43be95d9b32ee1e8571467d549ecf\",\"dweb:/ipfs/QmVDR6vh5xZ6McaRVccGNG9nAd2iht3NtXmdCFv3LurB8R\"]},\"/Users/gokulalex/Apps/eth_apps/ConcertNet/contracts/fusion_time_series_oracle_contract.sol\":{\"keccak256\":\"0x28984bfa41307822cacf320505cc0225967add498a9fe1d6bab904ad27882665\",\"urls\":[\"bzz-raw://8069ca2c8c21c62add0c92eb0a2a96c551883161dfec6282a4c2d2202a06b35b\",\"dweb:/ipfs/QmeuBgWjhJJwS5uXKA5sHkvZnUoiDhXVL2vKBq1DTToBnh\"]}},\"version\":1}",
-  "bytecode": "0x6080604052348015600f57600080fd5b50608c8061001e6000396000f3fe6080604052348015600f57600080fd5b506004361060285760003560e01c8063f4bebd7a14602d575b600080fd5b60336050565b604051808381526020018281526020019250505060405180910390f35b6000809156fea2646970667358221220e8e2db77b53d9f7e4b8acf8c8c09e36681f91298972b2dbca90a987939b4b6d264736f6c634300060c0033",
-  "deployedBytecode": "0x6080604052348015600f57600080fd5b506004361060285760003560e01c8063f4bebd7a14602d575b600080fd5b60336050565b604051808381526020018281526020019250505060405180910390f35b6000809156fea2646970667358221220e8e2db77b53d9f7e4b8acf8c8c09e36681f91298972b2dbca90a987939b4b6d264736f6c634300060c0033",
+  "metadata": "{\"compiler\":{\"version\":\"0.6.12+commit.27d51765\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"name\":\"getLatestRandomness\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"},{\"internalType\":\"bytes32\",\"name\":\"\",\"type\":\"bytes32\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"/Users/dhanendra/Gokul/concertnet/ConcertNet/contracts/fusion_time_series_oracle_contract.sol\":\"Beacon\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/Users/dhanendra/Gokul/concertnet/ConcertNet/contracts/BeaconContract.sol\":{\"keccak256\":\"0x9cbfb80d7f0e470fd5f533647ddd5cb32eb4c1a345e8aab13e15b4e7a3fb3638\",\"urls\":[\"bzz-raw://8c6c0883dc2879725e13ec9859b8c0ab871d952d67bfb024f6272dfe222f6262\",\"dweb:/ipfs/QmUfEzp6oizqkvy4CuAf4WmFGmzQVVKykCiYE3kLRPhQDb\"]},\"/Users/dhanendra/Gokul/concertnet/ConcertNet/contracts/IFactRegistry.sol\":{\"keccak256\":\"0x48326ab1c8f3c9e2414dd372305903f02d993bf5ee96ec46dec7167e6e9c325e\",\"urls\":[\"bzz-raw://251110b4ba9bb53d583c0fcb78c65c44dc7a4eb9f0a914a2b394d69a9fe17e4b\",\"dweb:/ipfs/QmbZZjwbhsQS2e4Fk91tNXpu2JxasZiNXyKJtSU9yGZeVG\"]},\"/Users/dhanendra/Gokul/concertnet/ConcertNet/contracts/PublicInputOffsets.sol\":{\"keccak256\":\"0xb93afec6f46bcbd89287f7032cdb1f2d1d13a50624abe94dea99e0a9444b214b\",\"urls\":[\"bzz-raw://de59913e48a5ca8b83f7e55589117062a5a43be95d9b32ee1e8571467d549ecf\",\"dweb:/ipfs/QmVDR6vh5xZ6McaRVccGNG9nAd2iht3NtXmdCFv3LurB8R\"]},\"/Users/dhanendra/Gokul/concertnet/ConcertNet/contracts/fusion_time_series_oracle_contract.sol\":{\"keccak256\":\"0x28984bfa41307822cacf320505cc0225967add498a9fe1d6bab904ad27882665\",\"urls\":[\"bzz-raw://8069ca2c8c21c62add0c92eb0a2a96c551883161dfec6282a4c2d2202a06b35b\",\"dweb:/ipfs/QmeuBgWjhJJwS5uXKA5sHkvZnUoiDhXVL2vKBq1DTToBnh\"]}},\"version\":1}",
+  "bytecode": "0x6080604052348015600f57600080fd5b50608c8061001e6000396000f3fe6080604052348015600f57600080fd5b506004361060285760003560e01c8063f4bebd7a14602d575b600080fd5b60336050565b604051808381526020018281526020019250505060405180910390f35b6000809156fea26469706673582212202c7f6ab029bb1391f2b08e0474f0a051d0e9b5abbb5106579da00922961e7a5764736f6c634300060c0033",
+  "deployedBytecode": "0x6080604052348015600f57600080fd5b506004361060285760003560e01c8063f4bebd7a14602d575b600080fd5b60336050565b604051808381526020018281526020019250505060405180910390f35b6000809156fea26469706673582212202c7f6ab029bb1391f2b08e0474f0a051d0e9b5abbb5106579da00922961e7a5764736f6c634300060c0033",
   "immutableReferences": {},
   "sourceMap": "57:98:17:-:0;;;;;;;;;;;;;;;;;;;",
   "deployedSourceMap": "57:98:17:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;78:70;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;130:7;138;78:70;:::o",
   "source": "pragma solidity ^0.6.0;\n\nimport \"./BeaconContract.sol\";\n\ncontract Beacon{\n    function getLatestRandomness()external view returns(uint256,bytes32){}\n    \n}\n\ncontract FusionLedgerTimeSeriesOracle {\n\n    address public oracleAddress;\n  \n    address public BeaconContractAddress=0x79474439753C7c70011C3b00e06e559378bAD040;\n\n    constructor (address _oracleAddress) public {\n    oracleAddress = _oracleAddress;\n    }\n  \n    function setBeaconContractAddress(address _address) public  {\n        BeaconContractAddress=_address;\n    }\n    \n    function generateRandomNumber() public view returns(bytes32){\n        uint blockNumber;\n        bytes32 randomNumber;\n        Beacon beacon=Beacon(BeaconContractAddress);\n        (blockNumber,randomNumber)=beacon.getLatestRandomness();\n        return randomNumber;\n    }\n\n    \n    //Time Series Average Index\n    uint public time_series_average_number;\n    \n    //function setting Time Series Avarge from the Data Source\n    function setTimeSeriesAverage(uint _number) public {\n        time_series_average_number = block.timestamp + _number;\n    }\n    \n    //getter for the Time Sries Average Index\n    function getTimeSeriesAverage() public view returns (uint) {\n      \n      require(msg.sender == oracleAddress);\n\n        if ((bytes32(block.number))> generateRandomNumber()) {\n    \n        return time_series_average_number;\n      }\n    }\n}\n",
-  "sourcePath": "/Users/gokulalex/Apps/eth_apps/ConcertNet/contracts/fusion_time_series_oracle_contract.sol",
+  "sourcePath": "/Users/dhanendra/Gokul/concertnet/ConcertNet/contracts/fusion_time_series_oracle_contract.sol",
   "ast": {
-    "absolutePath": "/Users/gokulalex/Apps/eth_apps/ConcertNet/contracts/fusion_time_series_oracle_contract.sol",
+    "absolutePath": "/Users/dhanendra/Gokul/concertnet/ConcertNet/contracts/fusion_time_series_oracle_contract.sol",
     "exportedSymbols": {
       "Beacon": [
         5244
@@ -54,7 +54,7 @@
         "src": "0:23:17"
       },
       {
-        "absolutePath": "/Users/gokulalex/Apps/eth_apps/ConcertNet/contracts/BeaconContract.sol",
+        "absolutePath": "/Users/dhanendra/Gokul/concertnet/ConcertNet/contracts/BeaconContract.sol",
         "file": "./BeaconContract.sol",
         "id": 5235,
         "nodeType": "ImportDirective",
@@ -1387,7 +1387,7 @@
     "src": "0:1380:17"
   },
   "legacyAST": {
-    "absolutePath": "/Users/gokulalex/Apps/eth_apps/ConcertNet/contracts/fusion_time_series_oracle_contract.sol",
+    "absolutePath": "/Users/dhanendra/Gokul/concertnet/ConcertNet/contracts/fusion_time_series_oracle_contract.sol",
     "exportedSymbols": {
       "Beacon": [
         5244
@@ -1412,7 +1412,7 @@
         "src": "0:23:17"
       },
       {
-        "absolutePath": "/Users/gokulalex/Apps/eth_apps/ConcertNet/contracts/BeaconContract.sol",
+        "absolutePath": "/Users/dhanendra/Gokul/concertnet/ConcertNet/contracts/BeaconContract.sol",
         "file": "./BeaconContract.sol",
         "id": 5235,
         "nodeType": "ImportDirective",
@@ -2749,8 +2749,8 @@
     "version": "0.6.12+commit.27d51765.Emscripten.clang"
   },
   "networks": {},
-  "schemaVersion": "3.2.3",
-  "updatedAt": "2020-09-17T19:37:00.649Z",
+  "schemaVersion": "3.2.4",
+  "updatedAt": "2020-09-17T20:21:07.501Z",
   "devdoc": {
     "kind": "dev",
     "methods": {},
