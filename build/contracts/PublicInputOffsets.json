@@ -1,0 +1,565 @@
+{
+  "contractName": "PublicInputOffsets",
+  "abi": [],
+  "metadata": "{\"compiler\":{\"version\":\"0.6.12+commit.27d51765\"},\"language\":\"Solidity\",\"output\":{\"abi\":[],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"/Users/gokulalex/Apps/eth_apps/ConcertNet/contracts/PublicInputOffsets.sol\":\"PublicInputOffsets\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/Users/gokulalex/Apps/eth_apps/ConcertNet/contracts/PublicInputOffsets.sol\":{\"keccak256\":\"0xb93afec6f46bcbd89287f7032cdb1f2d1d13a50624abe94dea99e0a9444b214b\",\"urls\":[\"bzz-raw://de59913e48a5ca8b83f7e55589117062a5a43be95d9b32ee1e8571467d549ecf\",\"dweb:/ipfs/QmVDR6vh5xZ6McaRVccGNG9nAd2iht3NtXmdCFv3LurB8R\"]}},\"version\":1}",
+  "bytecode": "0x6080604052348015600f57600080fd5b50603f80601d6000396000f3fe6080604052600080fdfea2646970667358221220b8a934222b87bac81a20ca077d0c3f1c8630815e15c8199ae9a5c3d5984ed93864736f6c634300060c0033",
+  "deployedBytecode": "0x6080604052600080fdfea2646970667358221220b8a934222b87bac81a20ca077d0c3f1c8630815e15c8199ae9a5c3d5984ed93864736f6c634300060c0033",
+  "immutableReferences": {},
+  "sourceMap": "26:389:12:-:0;;;;;;;;;;;;;;;;;;;",
+  "deployedSourceMap": "26:389:12:-:0;;;;;",
+  "source": "pragma solidity ^0.6.2;\n\n\ncontract PublicInputOffsets {\n    // The following constants are offsets of data expected in the public input.\n    uint256 internal constant OFFSET_LOG_TRACE_LENGTH = 0;\n    uint256 internal constant OFFSET_VDF_OUTPUT_X = 1;\n    uint256 internal constant OFFSET_VDF_OUTPUT_Y = 2;\n    uint256 internal constant OFFSET_VDF_INPUT_X = 3;\n    uint256 internal constant OFFSET_VDF_INPUT_Y = 4;\n}\n",
+  "sourcePath": "/Users/gokulalex/Apps/eth_apps/ConcertNet/contracts/PublicInputOffsets.sol",
+  "ast": {
+    "absolutePath": "/Users/gokulalex/Apps/eth_apps/ConcertNet/contracts/PublicInputOffsets.sol",
+    "exportedSymbols": {
+      "PublicInputOffsets": [
+        3825
+      ]
+    },
+    "id": 3826,
+    "license": null,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 3809,
+        "literals": [
+          "solidity",
+          "^",
+          "0.6",
+          ".2"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:12"
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 3825,
+        "linearizedBaseContracts": [
+          3825
+        ],
+        "name": "PublicInputOffsets",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": true,
+            "id": 3812,
+            "mutability": "constant",
+            "name": "OFFSET_LOG_TRACE_LENGTH",
+            "nodeType": "VariableDeclaration",
+            "overrides": null,
+            "scope": 3825,
+            "src": "141:53:12",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint256",
+              "typeString": "uint256"
+            },
+            "typeName": {
+              "id": 3810,
+              "name": "uint256",
+              "nodeType": "ElementaryTypeName",
+              "src": "141:7:12",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "value": {
+              "argumentTypes": null,
+              "hexValue": "30",
+              "id": 3811,
+              "isConstant": false,
+              "isLValue": false,
+              "isPure": true,
+              "kind": "number",
+              "lValueRequested": false,
+              "nodeType": "Literal",
+              "src": "193:1:12",
+              "subdenomination": null,
+              "typeDescriptions": {
+                "typeIdentifier": "t_rational_0_by_1",
+                "typeString": "int_const 0"
+              },
+              "value": "0"
+            },
+            "visibility": "internal"
+          },
+          {
+            "constant": true,
+            "id": 3815,
+            "mutability": "constant",
+            "name": "OFFSET_VDF_OUTPUT_X",
+            "nodeType": "VariableDeclaration",
+            "overrides": null,
+            "scope": 3825,
+            "src": "200:49:12",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint256",
+              "typeString": "uint256"
+            },
+            "typeName": {
+              "id": 3813,
+              "name": "uint256",
+              "nodeType": "ElementaryTypeName",
+              "src": "200:7:12",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "value": {
+              "argumentTypes": null,
+              "hexValue": "31",
+              "id": 3814,
+              "isConstant": false,
+              "isLValue": false,
+              "isPure": true,
+              "kind": "number",
+              "lValueRequested": false,
+              "nodeType": "Literal",
+              "src": "248:1:12",
+              "subdenomination": null,
+              "typeDescriptions": {
+                "typeIdentifier": "t_rational_1_by_1",
+                "typeString": "int_const 1"
+              },
+              "value": "1"
+            },
+            "visibility": "internal"
+          },
+          {
+            "constant": true,
+            "id": 3818,
+            "mutability": "constant",
+            "name": "OFFSET_VDF_OUTPUT_Y",
+            "nodeType": "VariableDeclaration",
+            "overrides": null,
+            "scope": 3825,
+            "src": "255:49:12",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint256",
+              "typeString": "uint256"
+            },
+            "typeName": {
+              "id": 3816,
+              "name": "uint256",
+              "nodeType": "ElementaryTypeName",
+              "src": "255:7:12",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "value": {
+              "argumentTypes": null,
+              "hexValue": "32",
+              "id": 3817,
+              "isConstant": false,
+              "isLValue": false,
+              "isPure": true,
+              "kind": "number",
+              "lValueRequested": false,
+              "nodeType": "Literal",
+              "src": "303:1:12",
+              "subdenomination": null,
+              "typeDescriptions": {
+                "typeIdentifier": "t_rational_2_by_1",
+                "typeString": "int_const 2"
+              },
+              "value": "2"
+            },
+            "visibility": "internal"
+          },
+          {
+            "constant": true,
+            "id": 3821,
+            "mutability": "constant",
+            "name": "OFFSET_VDF_INPUT_X",
+            "nodeType": "VariableDeclaration",
+            "overrides": null,
+            "scope": 3825,
+            "src": "310:48:12",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint256",
+              "typeString": "uint256"
+            },
+            "typeName": {
+              "id": 3819,
+              "name": "uint256",
+              "nodeType": "ElementaryTypeName",
+              "src": "310:7:12",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "value": {
+              "argumentTypes": null,
+              "hexValue": "33",
+              "id": 3820,
+              "isConstant": false,
+              "isLValue": false,
+              "isPure": true,
+              "kind": "number",
+              "lValueRequested": false,
+              "nodeType": "Literal",
+              "src": "357:1:12",
+              "subdenomination": null,
+              "typeDescriptions": {
+                "typeIdentifier": "t_rational_3_by_1",
+                "typeString": "int_const 3"
+              },
+              "value": "3"
+            },
+            "visibility": "internal"
+          },
+          {
+            "constant": true,
+            "id": 3824,
+            "mutability": "constant",
+            "name": "OFFSET_VDF_INPUT_Y",
+            "nodeType": "VariableDeclaration",
+            "overrides": null,
+            "scope": 3825,
+            "src": "364:48:12",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint256",
+              "typeString": "uint256"
+            },
+            "typeName": {
+              "id": 3822,
+              "name": "uint256",
+              "nodeType": "ElementaryTypeName",
+              "src": "364:7:12",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "value": {
+              "argumentTypes": null,
+              "hexValue": "34",
+              "id": 3823,
+              "isConstant": false,
+              "isLValue": false,
+              "isPure": true,
+              "kind": "number",
+              "lValueRequested": false,
+              "nodeType": "Literal",
+              "src": "411:1:12",
+              "subdenomination": null,
+              "typeDescriptions": {
+                "typeIdentifier": "t_rational_4_by_1",
+                "typeString": "int_const 4"
+              },
+              "value": "4"
+            },
+            "visibility": "internal"
+          }
+        ],
+        "scope": 3826,
+        "src": "26:389:12"
+      }
+    ],
+    "src": "0:416:12"
+  },
+  "legacyAST": {
+    "absolutePath": "/Users/gokulalex/Apps/eth_apps/ConcertNet/contracts/PublicInputOffsets.sol",
+    "exportedSymbols": {
+      "PublicInputOffsets": [
+        3825
+      ]
+    },
+    "id": 3826,
+    "license": null,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 3809,
+        "literals": [
+          "solidity",
+          "^",
+          "0.6",
+          ".2"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:12"
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 3825,
+        "linearizedBaseContracts": [
+          3825
+        ],
+        "name": "PublicInputOffsets",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": true,
+            "id": 3812,
+            "mutability": "constant",
+            "name": "OFFSET_LOG_TRACE_LENGTH",
+            "nodeType": "VariableDeclaration",
+            "overrides": null,
+            "scope": 3825,
+            "src": "141:53:12",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint256",
+              "typeString": "uint256"
+            },
+            "typeName": {
+              "id": 3810,
+              "name": "uint256",
+              "nodeType": "ElementaryTypeName",
+              "src": "141:7:12",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "value": {
+              "argumentTypes": null,
+              "hexValue": "30",
+              "id": 3811,
+              "isConstant": false,
+              "isLValue": false,
+              "isPure": true,
+              "kind": "number",
+              "lValueRequested": false,
+              "nodeType": "Literal",
+              "src": "193:1:12",
+              "subdenomination": null,
+              "typeDescriptions": {
+                "typeIdentifier": "t_rational_0_by_1",
+                "typeString": "int_const 0"
+              },
+              "value": "0"
+            },
+            "visibility": "internal"
+          },
+          {
+            "constant": true,
+            "id": 3815,
+            "mutability": "constant",
+            "name": "OFFSET_VDF_OUTPUT_X",
+            "nodeType": "VariableDeclaration",
+            "overrides": null,
+            "scope": 3825,
+            "src": "200:49:12",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint256",
+              "typeString": "uint256"
+            },
+            "typeName": {
+              "id": 3813,
+              "name": "uint256",
+              "nodeType": "ElementaryTypeName",
+              "src": "200:7:12",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "value": {
+              "argumentTypes": null,
+              "hexValue": "31",
+              "id": 3814,
+              "isConstant": false,
+              "isLValue": false,
+              "isPure": true,
+              "kind": "number",
+              "lValueRequested": false,
+              "nodeType": "Literal",
+              "src": "248:1:12",
+              "subdenomination": null,
+              "typeDescriptions": {
+                "typeIdentifier": "t_rational_1_by_1",
+                "typeString": "int_const 1"
+              },
+              "value": "1"
+            },
+            "visibility": "internal"
+          },
+          {
+            "constant": true,
+            "id": 3818,
+            "mutability": "constant",
+            "name": "OFFSET_VDF_OUTPUT_Y",
+            "nodeType": "VariableDeclaration",
+            "overrides": null,
+            "scope": 3825,
+            "src": "255:49:12",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint256",
+              "typeString": "uint256"
+            },
+            "typeName": {
+              "id": 3816,
+              "name": "uint256",
+              "nodeType": "ElementaryTypeName",
+              "src": "255:7:12",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "value": {
+              "argumentTypes": null,
+              "hexValue": "32",
+              "id": 3817,
+              "isConstant": false,
+              "isLValue": false,
+              "isPure": true,
+              "kind": "number",
+              "lValueRequested": false,
+              "nodeType": "Literal",
+              "src": "303:1:12",
+              "subdenomination": null,
+              "typeDescriptions": {
+                "typeIdentifier": "t_rational_2_by_1",
+                "typeString": "int_const 2"
+              },
+              "value": "2"
+            },
+            "visibility": "internal"
+          },
+          {
+            "constant": true,
+            "id": 3821,
+            "mutability": "constant",
+            "name": "OFFSET_VDF_INPUT_X",
+            "nodeType": "VariableDeclaration",
+            "overrides": null,
+            "scope": 3825,
+            "src": "310:48:12",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint256",
+              "typeString": "uint256"
+            },
+            "typeName": {
+              "id": 3819,
+              "name": "uint256",
+              "nodeType": "ElementaryTypeName",
+              "src": "310:7:12",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "value": {
+              "argumentTypes": null,
+              "hexValue": "33",
+              "id": 3820,
+              "isConstant": false,
+              "isLValue": false,
+              "isPure": true,
+              "kind": "number",
+              "lValueRequested": false,
+              "nodeType": "Literal",
+              "src": "357:1:12",
+              "subdenomination": null,
+              "typeDescriptions": {
+                "typeIdentifier": "t_rational_3_by_1",
+                "typeString": "int_const 3"
+              },
+              "value": "3"
+            },
+            "visibility": "internal"
+          },
+          {
+            "constant": true,
+            "id": 3824,
+            "mutability": "constant",
+            "name": "OFFSET_VDF_INPUT_Y",
+            "nodeType": "VariableDeclaration",
+            "overrides": null,
+            "scope": 3825,
+            "src": "364:48:12",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint256",
+              "typeString": "uint256"
+            },
+            "typeName": {
+              "id": 3822,
+              "name": "uint256",
+              "nodeType": "ElementaryTypeName",
+              "src": "364:7:12",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "value": {
+              "argumentTypes": null,
+              "hexValue": "34",
+              "id": 3823,
+              "isConstant": false,
+              "isLValue": false,
+              "isPure": true,
+              "kind": "number",
+              "lValueRequested": false,
+              "nodeType": "Literal",
+              "src": "411:1:12",
+              "subdenomination": null,
+              "typeDescriptions": {
+                "typeIdentifier": "t_rational_4_by_1",
+                "typeString": "int_const 4"
+              },
+              "value": "4"
+            },
+            "visibility": "internal"
+          }
+        ],
+        "scope": 3826,
+        "src": "26:389:12"
+      }
+    ],
+    "src": "0:416:12"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.6.12+commit.27d51765.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.2.3",
+  "updatedAt": "2020-09-17T19:37:00.713Z",
+  "devdoc": {
+    "kind": "dev",
+    "methods": {},
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "version": 1
+  }
+}

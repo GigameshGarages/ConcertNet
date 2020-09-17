@@ -91,7 +91,7 @@ address public BeaconContractAddress=0x79474439753C7c70011C3b00e06e559378bAD040;
     ) payable
         timeLineCheck(_bnum, _commitBalkline, _commitDeadline)
         moreThanZero(_deposit) external returns (uint256 _campaignID) {
-        _campaignID = campaigns.length++;
+        _campaignID = campaigns.length;
         Campaign storage c = campaigns[_campaignID];
         numCampaigns++;
         c.bnum = _bnum;
