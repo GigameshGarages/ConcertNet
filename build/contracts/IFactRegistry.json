@@ -21,16 +21,16 @@
       "type": "function"
     }
   ],
-  "metadata": "{\"compiler\":{\"version\":\"0.6.12+commit.27d51765\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"fact\",\"type\":\"bytes32\"}],\"name\":\"isValid\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"/Users/dhanendra/Gokul/concertnet/ConcertNet/contracts/IFactRegistry.sol\":\"IFactRegistry\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/Users/dhanendra/Gokul/concertnet/ConcertNet/contracts/IFactRegistry.sol\":{\"keccak256\":\"0x48326ab1c8f3c9e2414dd372305903f02d993bf5ee96ec46dec7167e6e9c325e\",\"urls\":[\"bzz-raw://251110b4ba9bb53d583c0fcb78c65c44dc7a4eb9f0a914a2b394d69a9fe17e4b\",\"dweb:/ipfs/QmbZZjwbhsQS2e4Fk91tNXpu2JxasZiNXyKJtSU9yGZeVG\"]}},\"version\":1}",
+  "metadata": "{\"compiler\":{\"version\":\"0.6.12+commit.27d51765\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"fact\",\"type\":\"bytes32\"}],\"name\":\"isValid\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"/Users/gokulalex/Apps/eth_apps/ConcertNet/contracts/IFactRegistry.sol\":\"IFactRegistry\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/Users/gokulalex/Apps/eth_apps/ConcertNet/contracts/IFactRegistry.sol\":{\"keccak256\":\"0x48326ab1c8f3c9e2414dd372305903f02d993bf5ee96ec46dec7167e6e9c325e\",\"urls\":[\"bzz-raw://251110b4ba9bb53d583c0fcb78c65c44dc7a4eb9f0a914a2b394d69a9fe17e4b\",\"dweb:/ipfs/QmbZZjwbhsQS2e4Fk91tNXpu2JxasZiNXyKJtSU9yGZeVG\"]}},\"version\":1}",
   "bytecode": "0x",
   "deployedBytecode": "0x",
   "immutableReferences": {},
   "sourceMap": "",
   "deployedSourceMap": "",
   "source": "pragma solidity ^0.6.2;\n\n/*\n  The Fact Registry design pattern is a way to separate cryptographic verification from the\n  business logic of the contract flow.\n  A fact registry holds a hash table of verified \"facts\" which are represented by a hash of claims\n  that the registry hash check and found valid. This table may be queried by accessing the\n  isValid() function of the registry with a given hash.\n  In addition, each fact registry exposes a registry specific function for submitting new claims\n  together with their proofs. The information submitted varies from one registry to the other\n  depending of the type of fact requiring verification.\n  For further reading on the Fact Registry design pattern see this\n  `StarkWare blog post <https://medium.com/starkware/the-fact-registry-a64aafb598b6>`_.\n*/\nabstract contract IFactRegistry {\n    \n    function isValid(bytes32 fact) view  virtual public returns (bool);\n}\n",
-  "sourcePath": "/Users/dhanendra/Gokul/concertnet/ConcertNet/contracts/IFactRegistry.sol",
+  "sourcePath": "/Users/gokulalex/Apps/eth_apps/ConcertNet/contracts/IFactRegistry.sol",
   "ast": {
-    "absolutePath": "/Users/dhanendra/Gokul/concertnet/ConcertNet/contracts/IFactRegistry.sol",
+    "absolutePath": "/Users/gokulalex/Apps/eth_apps/ConcertNet/contracts/IFactRegistry.sol",
     "exportedSymbols": {
       "IFactRegistry": [
         3135
@@ -160,7 +160,7 @@
     "src": "0:923:9"
   },
   "legacyAST": {
-    "absolutePath": "/Users/dhanendra/Gokul/concertnet/ConcertNet/contracts/IFactRegistry.sol",
+    "absolutePath": "/Users/gokulalex/Apps/eth_apps/ConcertNet/contracts/IFactRegistry.sol",
     "exportedSymbols": {
       "IFactRegistry": [
         3135
@@ -294,8 +294,8 @@
     "version": "0.6.12+commit.27d51765.Emscripten.clang"
   },
   "networks": {},
-  "schemaVersion": "3.2.4",
-  "updatedAt": "2020-09-17T20:21:07.533Z",
+  "schemaVersion": "3.2.3",
+  "updatedAt": "2020-09-18T15:26:00.958Z",
   "devdoc": {
     "kind": "dev",
     "methods": {},
